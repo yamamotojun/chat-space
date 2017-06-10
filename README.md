@@ -16,63 +16,67 @@ Things you may want to cover:
 
 
 
-# user_table
+# users_table
 
-| column     | type        | option                                              |
+| column     | type        | options                                             |
 |:-----------|------------:|:---------------------------------------------------:|
-| user_id    | integer     | null: false foreign_key: true                       |
-| user_name  | string      | null: false, unique: true  foreign_key: true,index  |
+| id         | integer     | null: false foreign_key: true                       |
+| name       | string      | null: false, unique: true index: true               |
 | e_mail     | string      | null: false, unique: true,                          |
 | password   | string      | null: false                                         |
 
 # association
 
+ has_many: groups
+ has_many: messeges
 
 
-# group_table
+# groups_table
 
-| column     | type        | option                                              |
+| column     | type        | options                                             |
 |:-----------|------------:|:---------------------------------------------------:|
-| group_id   | integer     | null: false                                         |
-| group_name | string      | null: false foreign_key: true,                      |
+| id         | integer     | null: false                                         |
+| name       |  string     | null: false foreign_key: true,                      |
 
 
 # association
- has_many    :group
-# has_many   :user
-# belongs_to :group
+
+ has_many   :users
 
 
 
 
 
-# group_member_table
 
-| column     | type        | option                                              |
+# groups_users_table
+
+| column     | type        | options                                             |
 |:-----------|------------:|:---------------------------------------------------:|
-| group_id   | integer     | null:false                                          |
-| menber_id  | integer     | null:false                                          |
+| user_id    | string      | :null, false foreign_key: true                      |
+| group_id   | integer     | null:false foreign_key: true                        |
 
 # association
-# has_many   :user
-# belongs_to :group
 
+
+  has_many :users
+  has_many :groups
+  has_many :messeges, through members
 
 
 
 # messege_table
 
-| column     | type        | option                                              |
+| column     | type        | options                                             |
 |:-----------|------------:|:---------------------------------------------------:|
-| body       | text        | :null, false foreign_key: true                      |
-| image      | string      | :null, false foreign_key: true                      |
-| data_time   | datetime   | :null, false                                        |
+| body       | text        | :null, false                                        |
+| image      | string      | :null, false                                        |
+| data_time  | datatime    | :null, false                                        |
+| user_id    | string      | :null, false foreign_key: true                      |
+| group_id   | string      | :null, false foreign_key: true
 
-# association
+# asosiasion
 
-# has_many   :messege
-# belongs_to :user
-
+  belongs_to :user
 
 * Database initialization
 #
