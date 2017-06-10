@@ -8,6 +8,8 @@
 | e_mail     | string      | null: false unique: true                            |
 | password   | string      | null: false                                         |
 
+# チャットメンバー検索時に検索できるようにindexを貼る
+
 # association
 
  hasnmany: groups,through groups_users
@@ -19,8 +21,8 @@
 
 | column     | type        | options                                             |
 |:-----------|------------:|:---------------------------------------------------:|
-| id         | integer     | foreign_key: true,                                  |
 | name       | string      | null: false                                         |
+
 
 
 # association
@@ -37,10 +39,14 @@
 
 # groups_users_table
 
-| column     | type        | options                                             |
-|:-----------|------------:|:---------------------------------------------------:|
-| user_id    | integer     | foreign_key: true,                                  |
-| group_id   | integer     | foreign_key: true,                                  |
+| column     | type              | options                                       |
+|:-----------|------------------:|:---------------------------------------------:|
+| user_id    | references :group | foreign_key: true, index: true                |
+| group_id   | references :user  | foreign_key: true, index: true                |
+
+# 新規チャットグループグループで引き出せるように
+# 新規チャットグループでのメンバー追加でuserが引き出せるように
+
 
 # association
 
@@ -52,13 +58,12 @@
 
 # messeges_table
 
-| column     | type        | options                                             |
-|:-----------|------------:|:---------------------------------------------------:|
-| body       | text        | :null, false                                        |
-| image      | string      | :null, false                                        |
-| data_time  | datatime    | :null, false                                        |
-| user_id    | integer     | foreign_key: true                                   |
-| group_id   | integer     | foreign_key: true                                   |
+| column     | type            | options                                         |
+|:-----------|----------------:|:-----------------------------------------------:|
+| body       | text            |                                                 |
+| image      | string          |                                                 |
+| user_id    |references :group| foreign_key: true index: true                   |
+| group_id   |references :user | foreign_key: true index: true                   |
 
 # asosiasion
 
