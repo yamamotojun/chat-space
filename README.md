@@ -4,7 +4,7 @@
 
 | column     | type        | options                                             |
 |:-----------|------------:|:---------------------------------------------------:|
-| name       | string      | null: false                                         |
+| name       | string      | null: false index: true                             |
 | e_mail     | string      | null: false unique: true                            |
 | password   | string      | null: false                                         |
 
