@@ -1,24 +1,29 @@
 .chat
   .side
     .side-bar
-      山本 惇
-      %div.i.fa.fa-pencil-square-o
-      %div.i.fa.fa-cog
+      %p.name yamamoto
+      = link_to "#" do
+        %p.i.fa.fa-cog
+      = link_to "#" do
+        %p.i.fa.fa-pencil-square-o
     .side-bar__bottom
-      .group__name group1
-      .group__name_men メンバー１
-      .group__name2 group2
-      .group__name_men2  メンバー2
+      %p.group group1
+      %p.group__men メンバー１
+      %p.group group2
+      %p.group__men メンバー2
   .chat__area
-    .chat__right_area
+    .chat__area__right
       .edit__botton edit
       .sampleG groupname
       .sampleG__under yamamoto
-    .chat__right_area_bottom
+    .chat__area_right_bottom
       %p.u__name name
-      %p.u__data_time 1890/06/05
+      %p.u__data_time 1890/06/05 08:00:00
       %p.u__messege messege
     .white__messege_box
-      .input_messege type a messege
-      .send__messege_box send
-      .pic
+      .div__a
+        %input.messege{:placeholder =>"type a messege" , :type => "text"}/
+        = link_to "#" do
+          %p.i.fa.fa-picture-o
+        .send__messege_box send
+

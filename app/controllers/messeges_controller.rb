@@ -1,6 +1,6 @@
-class MessegesController < ApplicationController
+  class MessegesController < ApplicationController
 
-def index
-end
+    def index
+  end
 
-end
+    end
