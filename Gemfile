@@ -48,6 +48,6 @@ group :development do
 end
 
   gem 'haml-rails'
-  gem 'erb2haml'
+  gem "erb2haml", :group => :development
   gem 'font-awesome-rails'
 
