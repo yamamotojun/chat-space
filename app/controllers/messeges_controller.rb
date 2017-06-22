@@ -1,6 +1,6 @@
   class MessegesController < ApplicationController
 
-    before_action :move_to_sign_up, except: :sign_up
+    before_action :move_to_index, except: :index
 
     def index
     end
