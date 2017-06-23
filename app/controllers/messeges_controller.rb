@@ -1,6 +1,5 @@
   class MessegesController < ApplicationController
 
-    before_action :move_to_index, expect: :index
     before_action :authenticate_user!, expect: :index
 
     def index
