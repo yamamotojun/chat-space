@@ -1,11 +1,14 @@
 class UsersController < ApplicationController
+
  def edit
-  @nickname = current_user.nickname
-  @email = current_user.email
+  @nickname = User.where(user_id: current_user.id)
+
+  @email = User.where(user_id: current_user.id)
  end
+
  def update
-  @nickname = current_user.nickname
-  @email = users.where(e_mail:current_user.email)
+  @nickname = User.where(user_id: current_user.id)
+  @email = User.where(user_id: current_user.id)
  end
 
 end
