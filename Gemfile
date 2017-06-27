@@ -1,5 +1,4 @@
 
-# 間違えてbundle updateしました
 source 'https://rubygems.org'
 
 
