@@ -1,8 +1,10 @@
-  class MessegesController < ApplicationController
+class MessegesController < ApplicationController
 
-
-    def index
-    end
-
+  def index
+    flash[:notice] = "アカウントを作成しました"
 
   end
+
+
+end
+
