@@ -1,3 +1,4 @@
+
 source 'https://rubygems.org'
 
 
@@ -51,4 +52,5 @@ end
   gem "erb2haml", :group => :development
   gem 'font-awesome-rails'
   gem 'devise'
+  gem 'pry-rails'
 
