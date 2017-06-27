@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
 
+def create
+  @user.new
+end
+
  def edit
   user = User.find(params[:id])
  end
@@ -14,3 +18,4 @@ private
   params.require(:user).permit(:email, :nickname)
  end
 end
+

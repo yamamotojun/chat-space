@@ -24,8 +24,7 @@
       .div__a
         / %input.messege{:placeholder =>"type a messege" , :type => "text"}/
         %form{:action => "", :method => "post"}
-        %p
-        %input{:maxlength => "20", :messege => "“messege”", :size => "40", :type => "text"}/
+        %input.messaage_form{:maxlength => "20", :messege => "“messege”", :size => "40", :type => "text"}
         = link_to "#" do
           %p.i.fa.fa-picture-o
         .send__messege_box send

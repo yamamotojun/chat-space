@@ -4,6 +4,7 @@
       %h2 Log in
       %h5 登録しているユーザーでログイン
       = render "devise/shared/links"
+      / <%= link_to "Sign up", new_user_registration_path %>
     .account-page__inner--right.user-form
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .field
@@ -19,3 +20,4 @@
               = f.password_field :password, autocomplete: "off"
           .actions
             = f.submit "Log in", class: 'btn'
+
