@@ -3,3 +3,4 @@ class AddIndexToGroupsUsers < ActiveRecord::Migration[5.0]
     add_index :groups_users, [:user_id, :group_id]
   end
 end
+
